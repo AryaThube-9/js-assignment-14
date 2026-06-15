@@ -5,7 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .dice{
+        background-color: whitesmoke;
+        color: black;
+        margin: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        cursor: pointer;
+        margin-left: 60px;
+        font-size: 20px;
+    }
+</style>
 <body>
-    
+    <img src="./images/dice-1.png" alt="dice" id="diceroll" height="300px" >
+    <br><br>
+    <button type="button" onclick="rollDice()" class="dice">Tap The Dice</button>
+    <script>
+        const dice = document.getElementById("diceroll");
+        function rollDice() {
+            min = 1;
+            max = 7;
+            const randomNumber = Math.floor(Math.random() * (max - min) + 1);
+            console.log(randomNumber);
+            if (randomNumber === 1) {
+                dice.src = "./images/dice-1.png"
+            }
+            else if (randomNumber === 2) {
+                dice.src = "./images/dice-2.png"
+            }
+            else if (randomNumber === 3) {
+                dice.src = "./images/dice-3.png"
+            }
+            else if (randomNumber === 4) {
+                dice.src = "./images/dice-4.png"
+            }
+            else if (randomNumber === 5) {
+                dice.src = "./images/dice-5.png"
+            }
+            else {
+                dice.src = "./images/dice-6.png"
+            }
+        }
+    </script>
 </body>
 </html>
